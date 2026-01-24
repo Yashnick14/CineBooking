@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Outfit', sans-serif;
+
+  --color-primary: #e50914;
+  --color-secondary: #221f1f;
+  --color-accent: #f5f5f1;
+  --color-bg-dark: #0f0f0f;
+  --color-bg-card: rgba(255, 255, 255, 0.05);
+  --color-bg-glass: rgba(255, 255, 255, 0.1);
+  --color-text-main: #ffffff;
+  --color-text-muted: #b3b3b3;
+  --color-border-glass: rgba(255, 255, 255, 0.15);
+  
+  --shadow-premium: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  
+  --ease-custom: cubic-bezier(0.4, 0, 0.2, 1);
+  --animate-fade-in: fadeIn 0.8s ease-out forwards;
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+/* Global Styles */
+@layer base {
+  body {
+    @apply bg-bg-dark text-text-main font-sans antialiased overflow-x-hidden;
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3, h4, .brand {
+    @apply font-display tracking-tight;
+  }
+  
+  a, button {
+    @apply transition-all duration-300 ease-custom;
+  }
+}
+
+/* Utility Classes */
+@utility glass {
+  @apply bg-bg-glass backdrop-blur-xl border border-border-glass rounded-xl;
+}
+
+@utility glass-card {
+  @apply bg-bg-card backdrop-blur-md border border-border-glass rounded-2xl shadow-premium;
+}
+
+@utility container {
+  @apply max-w-[1200px] w-full mx-auto px-5;
+}
+
+/* Custom Utilities mimicking previous specific styles */
+@utility text-gradient {
+  @apply bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent;
+}
