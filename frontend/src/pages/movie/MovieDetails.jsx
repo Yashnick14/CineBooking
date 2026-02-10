@@ -67,7 +67,7 @@ const MovieDetails = () => {
       ></div>
       
       <div className="flex gap-16 items-start max-lg:flex-col max-lg:items-center max-lg:text-center">
-        <div className="w-[350px] shrink-0 overflow-hidden p-[10px] h-[520px] max-md:w-full max-md:max-w-[300px] max-md:h-auto glass-card">
+        <div className="w-[350px] shrink-0 overflow-hidden p-[10px] h-[520px] max-md:w-full max-md:max-w-[300px] max-md:h-[450px] glass-card">
           <img 
             src={movie.posterUrl || 'https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=1170&auto=format&fit=crop'} 
             alt={movie.title} 
